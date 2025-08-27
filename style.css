@@ -1,0 +1,193 @@
+/* style.css - ChatBot Avanzado */
+
+/* Reset y cuerpo */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #87CEEB, #FFE680); /* cielo azul a dorado sol */
+    color: #333;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px 10px;
+    transition: background 1s ease;
+}
+
+/* Título principal */
+#titulo-chat {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #1E3A8A;
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 15px 25px;
+    border-radius: 15px;
+    background: linear-gradient(to right, #FFF8DC, #FFE4B5);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    max-width: 100%;
+    line-height: 1.4em;
+    transition: all 0.3s ease;
+}
+
+/* Contenedor principal (fieldset) */
+fieldset {
+    border: none;
+    background: linear-gradient(to bottom right, #fffaf0, #f0f8ff);
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    padding: 30px;
+    width: 100%;
+    max-width: 650px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* Leyenda */
+legend {
+    font-size: 2em;
+    font-weight: bold;
+    color: #2E8B57;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Caja de chat */
+#chat_box {
+    height: 400px;
+    overflow-y: auto;
+    background: linear-gradient(to bottom, #f0f8ff, #fffaf0);
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+/* Mensajes del usuario */
+.user {
+    background: linear-gradient(135deg, #FFEDD5, #FFDAB9);
+    color: #6B3E26;
+    padding: 14px 20px;
+    border-radius: 25px;
+    margin: 8px 0;
+    max-width: 80%;
+    align-self: flex-end;
+    font-weight: 500;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+    animation: slideInRight 0.5s ease;
+}
+
+/* Mensajes del bot */
+.bot {
+    background: linear-gradient(135deg, #E0F7FA, #B2EBF2);
+    color: #00796B;
+    padding: 14px 20px;
+    border-radius: 25px;
+    margin: 8px 0;
+    max-width: 80%;
+    align-self: flex-start;
+    font-weight: 500;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+    animation: slideInLeft 0.5s ease;
+}
+
+/* Animaciones */
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Formulario */
+#chat_form {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Input usuario */
+#user_input {
+    flex: 1 1 60%;
+    padding: 14px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    background: #FFF8DC;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+#user_input:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 127, 80, 0.5);
+    border-color: #FF7F50;
+}
+
+/* Botón enviar */
+button {
+    flex: 1 1 30%;
+    min-width: 120px;
+    padding: 14px 28px;
+    background: linear-gradient(to right, #FF7F50, #FF6347);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(255, 99, 71, 0.4);
+}
+
+/* Scroll personalizado */
+#chat_box::-webkit-scrollbar {
+    width: 10px;
+}
+
+#chat_box::-webkit-scrollbar-thumb {
+    background: rgba(100,100,100,0.4);
+    border-radius: 10px;
+}
+
+#chat_box::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+}
+
+/* Media Queries: Tablets */
+@media (max-width: 768px) {
+    #chat_box { height: 320px; }
+    #user_input, button { flex: 1 1 100%; }
+    #titulo-chat { font-size: 1.3em; padding: 12px 20px; }
+}
+
+/* Media Queries: Móviles */
+@media (max-width: 480px) {
+    #chat_box { height: 260px; padding: 12px; }
+    .user, .bot { max-width: 90%; padding: 12px 16px; }
+    #titulo-chat { font-size: 1.1em; padding: 10px 12px; }
+    #user_input, button { padding: 10px; font-size: 0.9em; }
+}
+
+/* Cambio de fondo según clima (opcional: añadir clase "sol", "lluvia", etc desde JS) */
+body.sol { background: linear-gradient(to right, #87CEEB, #FFD700); } /* sol */
+body.lluvia { background: linear-gradient(to right, #00BFFF, #87CEEB); } /* lluvia */
+body.nieve { background: linear-gradient(to right, #B0E0E6, #FFFFFF); } /* nieve */
+body.noche { background: linear-gradient(to right, #2c3e50, #34495e); color: #fff; } /* noche */
