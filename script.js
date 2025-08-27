@@ -115,7 +115,10 @@ window.addEventListener('DOMContentLoaded', function() {
 "agüimes": ["Carne de cochino", "Gofio escaldado", "Papas arrugadas"],
 "la orotava": ["Conejo en salmorejo", "Puchero canario", "Gofio"],
 "granadilla de abona": ["Papas arrugadas", "Mojo picón", "Pescado fresco"],
-"san isidro": ["Papas arrugadas", "Gofio", "Carne fiesta"]
+"san isidro": ["Papas arrugadas", "Gofio", "Carne fiesta"],
+"chiclana": ["Pescaito frito", "Tortillitas de camarones", "Atún encebollado"],
+"san lucar de barrameda": ["Langostinos", "Manzanilla", "Acedías"],
+"puerto de santa maria": ["Mariscos", "Fideos con caballa", "Tortillitas de camarones"],
 
 };
 
